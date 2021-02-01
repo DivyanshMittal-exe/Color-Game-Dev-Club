@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Color Game</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body onload="newGame()">
+    <div id="header">
+      <h2>The Great</h2>
+      <h1 id="header-clue">rgb(xxx,xxx,xxx)</h1>
+      <h2>Guessing Game</h2>
+    </div>
+    <div id="container">
+      <div class="tile" id="0"></div>
+      <div class="tile" id="1"></div>
+      <div class="tile" id="2"></div>
+      <div class="tile" id="3"></div>
+      <div class="tile" id="4"></div>
+      <div class="tile" id="5"></div>
+      
+    </div>
+    <div class="bottom"><p>No of Wrong tries:</p><p id ="tick"></p> <button class="br" onClick="window.location.reload();">Refresh Page</button></div>
+   
+  </body>
+    <script>
+      var points = new Array(6);
+      for (i = 0; i < 6; i++) {
+        points[i] = document.getElementById(i);
+        }
+
+      console.log(points[1]);
+      var x;
+      var correctColor;
+
+      function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+
+      function newGame() {
+        for (i = 0; i < 6; i++) {
+        points[i].style.background = getRandomColor();
+        }
+
+        x = Math.floor(Math.random() * 6);
+
+        console.log(x);
+        
+        correctColor = points[x].style.background;
+        console.log(correctColor); 
+
+        document.getElementById("header-clue").innerHTML = correctColor;
+      }
+      var score=0;
+
+        points[0].addEventListener('click', function () {
+        if (points[0].style.background == correctColor) {
+          for (j = 0; i < 6; i++) {
+            points[j].style.background = correctColor;}
+          document.getElementById("header").style.background = correctColor;
+        } else {
+          points[0].style.background = "black";
+          score=score+1;      var element = document.getElementById("tick");
+      element.innerHTML = score;
+        }
+      });
+      points[1].addEventListener('click', function () {
+        if (points[1].style.background == correctColor) {
+          for (j = 0; i < 6; i++) {
+            points[j].style.background = correctColor;}
+          document.getElementById("header").style.background = correctColor;
+        } else {
+          points[1].style.background = "black";
+          score=score+1;      var element = document.getElementById("tick");
+      element.innerHTML = score;
+        }
+      });
+      points[2].addEventListener('click', function () {
+        if (points[2].style.background == correctColor) {
+          for (j = 0; i < 6; i++) {
+            points[j].style.background = correctColor;}
+          document.getElementById("header").style.background = correctColor;
+        } else {
+          points[2].style.background = "black";
+          score=score+1;      var element = document.getElementById("tick");
+      element.innerHTML = score;
+        }
+      });
+      points[3].addEventListener('click', function () {
+        if (points[3].style.background == correctColor) {
+          for (j = 0; i < 6; i++) {
+            points[j].style.background = correctColor;}
+          document.getElementById("header").style.background = correctColor;
+        } else {
+          points[3].style.background = "black";
+          score=score+1;      var element = document.getElementById("tick");
+      element.innerHTML = score;
+        }
+      });
+      points[4].addEventListener('click', function () {
+        if (points[4].style.background == correctColor) {
+          for (j = 0; i < 6; i++) {
+            points[j].style.background = correctColor;}
+          document.getElementById("header").style.background = correctColor;
+        } else {
+          points[4].style.background = "black";
+          score=score+1;      var element = document.getElementById("tick");
+      element.innerHTML = score;
+        }
+      });
+      points[5].addEventListener('click', function () {
+        if (points[5].style.background == correctColor) {
+          for (j = 0; i < 6; i++) {
+            points[j].style.background = correctColor;}
+          document.getElementById("header").style.background = correctColor;
+        } else {
+          points[5].style.background = "black";
+          score=score+1;
+          var element = document.getElementById("tick");
+          element.innerHTML = score;
+        }
+      });
+      var element = document.getElementById("tick");
+      element.innerHTML = score;
+
+    </script>
+</html>
